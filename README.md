@@ -182,6 +182,37 @@ The remaining active safety checks are intentionally retained for fast cancellat
 - Failure-only sanitized logging
 - Performance-focused release runtime
 
+
+## v1.1.0 Highlights
+
+- Optional "Enable for Tank Passengers" setting.
+- TD-220 Bastion: Left Passenger and Right Passenger are eligible.
+- TD-110 Maelstrom: Left Passenger and Right Passenger are eligible.
+- Main Gunner remains excluded.
+- Driver behavior is unchanged.
+- Passenger support is OFF by default.
+
+
+## v1.2.0 Highlights
+
+- Optional "Hide HUD Plus during Cinematic" setting.
+- Targets stock HD2 HUD Plus 0.2.1 without modifying or replacing HUD Plus.
+- Uses HUD Plus's own master screen-plan state rather than toggling individual HUD+ features.
+- Saves the exact HUD Plus screen choices on cinematic entry and restores them on exit.
+- HUD Plus compatibility discovery is bounded, performed once, then cached.
+- No HUD Plus config-file edits and no per-frame HUD Plus scanning.
+
+
+## v1.3.0 Highlights
+
+- Optional "Hide Mech HUD during Cinematic" setting, ON by default.
+- Targets stock Mech Part HUD v1.11.1 without modifying or replacing it.
+- Reuses Mech HUD's own built-in cursor-visible branch, which clears its GUI and returns before drawing.
+- The forced cursor state exists only for the synchronous duration of Mech HUD's own update call; unrelated UI never sees it.
+- Mech HUD read-only telemetry continues while hidden.
+- The compatibility wrapper is fully removed when the cinematic ends, so normal gameplay has zero ongoing Mech HUD compatibility wrapper cost.
+
+
 ---
 
 ## Notes
